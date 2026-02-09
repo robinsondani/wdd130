@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Gravitas+One&display=swap');
+
 #content {
     max-width: 1600px;
     margin: 0 auto;
@@ -5,7 +7,10 @@
 
 body {
     background-color: #fcfbfb;
-    font-family: Arial, sans-serif;
+    font-family: 'Funnel Display', Helvetica, sans-serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -14,6 +19,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
+}
+
+#logo_link {
+    padding-top: 5px;
 }
 
 nav {
@@ -25,7 +34,7 @@ nav a {
     text-align: center;
     color: #fcfbfb;
     text-decoration: none;
-    padding: 20px;
+    padding: 35px;
 }
 
 nav a:hover {
@@ -36,6 +45,9 @@ nav a:hover {
 .home-title {
     text-align: center;
     color: #18451C;
+    font-family: 'Gravitas One', sans-serif;
+    font-size: 2em;
+    margin-top: 10px;
 }
 
 #hero-msg h1, #hero-msg h4 {
@@ -46,6 +58,10 @@ nav a:hover {
     color: #18451C;
 }
 
+h2 {
+    margin: 0;
+}
+
 .button-box {
     text-align: center;
 }
@@ -54,8 +70,9 @@ nav a:hover {
     background-color: #85CEC8;
     color: #18451C;
     text-decoration: none;
+    font-size: 18px;
     padding: 15px 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 5px;
     display: inline-block;
 }
@@ -75,15 +92,29 @@ main section {
 
 .icon {
     width: 80px;
+    padding-top: 10px;
 }
 
 .hero-img img {
     width: 100%;
 }
 
+main section img {
+    box-sizing: border-box;
+}
+
+.river-card, .camping-card, .rapids-card {
+    margin: 200px 0;
+}
+
+.card-img {
+    border: 10px solid #d9c2a3;
+}
+
 .msg {
     background-color: #85CEC8;
     padding: 35px;
+    line-height: 1.5em;
 }
 
 .msg h2 {
@@ -92,14 +123,17 @@ main section {
 
 .msg p {
     color: #333;
+    font-size: .8em;
+    padding-bottom: 15px;
 }
 
 .join {
     background-color: #18451C;
     color: white;
     text-decoration: none;
+    font-size: 18px;
     padding: 15px 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 5px;
     display: inline-block;
 }
