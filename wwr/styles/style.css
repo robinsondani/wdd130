@@ -5,22 +5,27 @@
 
 body {
     background-color: #fcfbfb;
+    font-family: Arial, sans-serif;
 }
 
 header {
     background-color: rgba(24, 69, 28, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
+    gap: 20px;
 }
 
 nav a {
     text-align: center;
     color: #fcfbfb;
     text-decoration: none;
-    padding: 35px;
+    padding: 20px;
 }
 
 nav a:hover {
@@ -50,7 +55,7 @@ nav a:hover {
     color: #18451C;
     text-decoration: none;
     padding: 15px 30px;
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 5px;
     display: inline-block;
 }
@@ -72,13 +77,8 @@ main section {
     width: 80px;
 }
 
-#hero-img {
+.hero-img img {
     width: 100%;
-}
-
-#background {
-    height: 725px;
-    background-color: rgba(24, 69, 28, 0.1);
 }
 
 .msg {
@@ -95,11 +95,11 @@ main section {
 }
 
 .join {
-    background-color: #85CEC8;
-    color: #18451C;
+    background-color: #18451C;
+    color: white;
     text-decoration: none;
     padding: 15px 30px;
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 5px;
     display: inline-block;
 }
@@ -114,11 +114,11 @@ footer {
     color: #fcfbfb;
     padding: 25px 50px;
     margin-top: 200px;
+    text-align: center;
 }
 
 footer p {
     font-size: 1.2em;
-    color: #fcfbfb;
 }
 
 footer a {
