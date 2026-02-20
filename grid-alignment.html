@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Alignment Activity</title>
+    <link rel="stylesheet" type="text/css" href="grid-alignment.css" />
+</head>
+<body>
+    <h1>CSS Grid Alignment Examples</h1>
+    
+    <div class="section">
+        <h2>Example 1: Grid Items Aligned (1fr columns/rows)</h2>
+        <p>Grid fills parent. Boxes are smaller than cells. Use justify-items and align-items to center content within cells.</p>
+        <div class="content1">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Example 2: Grid Aligned (Fixed size 150px)</h2>
+        <p>Grid is fixed size, smaller than parent. Boxes fill cells. Use justify-content and align-content to center the grid itself.</p>
+        <div class="content2">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Example 3: Both Grid and Grid Items Aligned</h2>
+        <p>Grid is fixed size, boxes are smaller than cells. Use all four properties to center everything.</p>
+        <div class="content3">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+        </div>
+    </div>
+</body>
+</html>
