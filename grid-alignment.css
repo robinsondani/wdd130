@@ -35,18 +35,16 @@ p {
     font-size: 0.95em;
 }
 
-.box {
+/* colored boxes for examples */
+.red2, .green2, .yellow2, .blue2 {
     width: 80px;
     height: 80px;
-    background-color: #3498db;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
     border-radius: 4px;
 }
+.red2 { background-color: #e74c3c; }
+.green2 { background-color: #27ae60; }
+.yellow2 { background-color: #f1c40f; }
+.blue2 { background-color: #3498db; }
 
 /* EXAMPLE 1: Grid Items Aligned */
 /* Grid fills parent (1fr columns/rows)
