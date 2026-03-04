@@ -94,6 +94,13 @@ h2 {
     text-align: center;
 }
 
+/* center images inside each river section */
+.content-block img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 .button-box {
     text-align: center;
 }
