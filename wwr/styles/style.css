@@ -85,6 +85,15 @@ h2 {
     margin: 0;
 }
 
+/* center headings on rivers page */
+.hero {
+    text-align: center;
+}
+
+.content-block h2 {
+    text-align: center;
+}
+
 .button-box {
     text-align: center;
 }
