@@ -1,8 +1,8 @@
 :root {
-  --primary: #f05224;     
-  --secondary: #f0b224;    
-  --accent1: #f02e24;    
-  --accent2: #f5a773;      
+  --primary: #f05224;
+  --secondary: #f0b224;
+  --accent1: #f02e24;
+  --accent2: #f5a773;
   --text-dark: #222;
   --text-light: #fff;
   --max-width: 900px;
@@ -20,7 +20,7 @@ body {
 header {
   background-color: var(--primary);
   color: var(--text-light);
-  padding: 30px 20px;
+  padding: 25px 20px;
   text-align: center;
 }
 
@@ -40,7 +40,6 @@ header h2 {
   font-weight: 400;
   font-size: 1.1rem;
 }
-
 
 nav {
   margin-top: 20px;
