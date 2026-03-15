@@ -47,33 +47,35 @@ header h3 {
 /* NAVIGATION */
 nav {
   background-color: var(--primary);
-  padding: 12px 0;
-  border-top: 3px solid var(--secondary);
+  padding: 15px 0;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 25px; /* similar spacing to rafting site */
+}
+
+nav li {
+  display: inline;
 }
 
 nav a {
   text-decoration: none;
   color: var(--text-light);
-  font-weight: bold;
-  font-size: 1.15rem;
-  padding: 8px 14px;
-  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 5px 10px;
   transition: 0.3s ease;
 }
 
 nav a:hover {
-  background-color: var(--secondary);
-  color: var(--text-dark);
+  color: var(--secondary);
 }
+
 
 /* MAIN CONTENT */
 main {
