@@ -194,3 +194,48 @@ footer a:hover {
         font-size: 2rem;
     }
 }
+
+/* Accordion Button */
+.accordion {
+  background-color: #2A7F62;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Checkmark circle */
+.checkmark {
+  font-size: 1.4rem;
+  color: #E8B44C;
+}
+
+/* Panel */
+.panel {
+  padding: 0 18px 18px;
+  background-color: #F2F7F5;
+  display: none;
+  border-left: 4px solid #2A7F62;
+  border-radius: 0 0 6px 6px;
+}
+
+/* Checkbox styling */
+.complete-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2A7F62;
+}
+
+.complete-container input {
+  margin-right: 8px;
+}
