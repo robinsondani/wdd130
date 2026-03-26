@@ -369,41 +369,25 @@
     <p><a href="site-plan.html">Site Plan</a></p>
 </footer>
 
-</body>
-<body>
+<script>
+    const images = document.querySelectorAll(".accordion-img");
 
-    <script>
-        // Select the image and panel
-        const accordionImage = document.querySelector(".accordion-img");
-        const panel = document.querySelector(".panel");
-
-        // Toggle dropdown when image is clicked
-        accordionImage.addEventListener("click", function () {
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-});
-        // Accordion open/close
-        var acc = document.getElementsByClassName("accordion");
-
-        for (let i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            const panel = this.nextElementSibling;
             panel.style.display = panel.style.display === "block" ? "none" : "block";
-          });
-        }
-
-        // Mark Complete toggle
-        const checkbox = document.getElementById("completeBox");
-        const checkmark = document.querySelector(".checkmark");
-
-        checkbox.addEventListener("change", function () {
-          if (this.checked) {
-            checkmark.textContent = "✓";
-          } else {
-            checkmark.textContent = "○";
-          }
         });
-    </script>
+    });
 
+    const acc = document.getElementsByClassName("accordion");
+
+    for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        });
+    }
+</script>
 </body>
 </html>
