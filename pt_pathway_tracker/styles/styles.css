@@ -239,3 +239,67 @@ footer a:hover {
 .complete-container input {
   margin-right: 8px;
 }
+
+/* Image Accordion Container */
+.image-accordion {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+/* The image you click */
+.accordion-img {
+    width: 100%;
+    border-radius: 10px;
+    border: 4px solid #2A7F62;
+    transition: 0.3s;
+}
+
+.accordion-img:hover {
+    opacity: 0.85;
+}
+
+/* Dropdown panel */
+.panel {
+    display: none;
+    background-color: #F2F7F5;
+    border-left: 4px solid #2A7F62;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    margin-top: -5px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.grid-item img {
+    width: 100%;
+    border-radius: 12px;
+    border: 4px solid #2A7F62; /* PT green */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.grid-item img:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+}
+
+@media (max-width: 450px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
