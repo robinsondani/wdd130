@@ -1,10 +1,10 @@
-/* ------------------------------
+/* =========================================
    GLOBAL STYLES
---------------------------------*/
+========================================= */
 :root {
-    --primary: #2a7f62;      /* calming green */
-    --secondary: #f2f7f5;    /* soft background */
-    --accent: #e8b44c;       /* warm highlight */
+    --primary: #2a7f62;
+    --secondary: #f2f7f5;
+    --accent: #e8b44c;
     --dark: #1f1f1f;
     --light: #ffffff;
     --shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -23,9 +23,9 @@ img {
     display: block;
 }
 
-/* ------------------------------
+/* =========================================
    HEADER
---------------------------------*/
+========================================= */
 header {
     background-color: var(--light);
     display: flex;
@@ -50,11 +50,10 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* ------------------------------
+/* =========================================
    HERO SECTION
---------------------------------*/
+========================================= */
 .hero {
-    position: relative;
     text-align: center;
     padding: 2rem;
     background-color: var(--light);
@@ -72,9 +71,9 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* ------------------------------
+/* =========================================
    INTRO SECTION
---------------------------------*/
+========================================= */
 .intro {
     padding: 2rem;
     text-align: center;
@@ -84,9 +83,9 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* ------------------------------
+/* =========================================
    FEATURES GRID
---------------------------------*/
+========================================= */
 .features {
     padding: 2rem;
 }
@@ -116,6 +115,9 @@ nav a:hover {
     margin-top: 1rem;
 }
 
+/* =========================================
+   BUTTONS
+========================================= */
 .button {
     display: inline-block;
     margin-top: 1rem;
@@ -137,9 +139,9 @@ nav a:hover {
     font-size: 1.2rem;
 }
 
-/* ------------------------------
+/* =========================================
    CTA SECTION
---------------------------------*/
+========================================= */
 .cta {
     text-align: center;
     padding: 3rem 2rem;
@@ -157,9 +159,9 @@ nav a:hover {
     color: var(--dark);
 }
 
-/* ------------------------------
+/* =========================================
    FOOTER
---------------------------------*/
+========================================= */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -177,9 +179,140 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ------------------------------
-   RESPONSIVE TWEAKS
---------------------------------*/
+/* =========================================
+   PAGE TITLES
+========================================= */
+.page-title {
+    text-align: center;
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+
+/* =========================================
+   GRID LAYOUTS (Exercises, Recovery, Tracking)
+========================================= */
+.image-grid,
+.recovery-grid,
+.tracking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* =========================================
+   CARD STYLING (Exercises, Recovery, Tracking)
+========================================= */
+.grid-item,
+.recovery-box,
+.tracking-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-item:hover,
+.recovery-box:hover,
+.tracking-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   ICONS
+========================================= */
+.icon,
+.accordion-img {
+    width: 140px;
+    height: auto;
+    margin: 0 auto 1rem auto;
+}
+
+/* =========================================
+   COLLAPSIBLE SECTIONS
+========================================= */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.recovery-content,
+.tracking-content,
+.collapsible ul {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .4s ease, opacity .4s ease;
+}
+
+.collapsible.open .recovery-content,
+.collapsible.open .tracking-content,
+.collapsible.open ul {
+    max-height: 600px;
+    opacity: 1;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+.progress-container {
+    width: 100%;
+    background: #e6f5ee;
+    border-radius: 10px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: var(--primary);
+    border-radius: 10px;
+    transition: width .3s ease;
+}
+
+/* =========================================
+   TRACKING FORM ELEMENTS
+========================================= */
+.tracking-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.tracking-content textarea,
+.tracking-content select,
+.tracking-content input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: .5rem;
+    border-radius: 8px;
+    border: 1px solid #c8e6d8;
+    background: white;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 900px) {
+    .image-grid,
+    .recovery-grid,
+    .tracking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -187,233 +320,16 @@ footer a:hover {
     }
 
     nav a {
-        margin: 0 0.5rem;
+        margin: 0 .5rem;
     }
 
     .hero h1 {
         font-size: 2rem;
     }
-}
 
-/* ========== GRID LAYOUT ========== */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 2rem;
-    padding: 2rem;
-}
-
-
-/* ========== GRID ITEM CARD ========== */
-.grid-item {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.grid-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-/* ========== CATEGORY ICONS ========== */
-.accordion-img {
-    width: 100%;
-    max-width: 140px;
-    display: block;
-    margin: 0 auto 1rem auto;
-}
-
-/* ========== ACCORDION BUTTONS ========== */
-.accordion {
-    width: 100%;
-    background-color: #e8f3ff;
-    color: #003366;
-    cursor: pointer;
-    padding: 14px;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.accordion:hover {
-    background-color: #d6e9ff;
-}
-
-.accordion.active {
-    background-color: #c2ddff;
-}
-
-/* ========== ACCORDION PANELS ========== */
-.panel {
-    padding: 0 15px;
-    display: none;
-    overflow: hidden;
-    background-color: #f9fbff;
-    border-left: 3px solid #7bb3ff;
-    margin-bottom: 10px;
-    border-radius: 0 0 8px 8px;
-}
-
-/* ========== LIST STYLING ========== */
-.grid-item ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.grid-item li {
-    margin-bottom: 1rem;
-}
-
-/* ========== RESPONSIVE TWEAKS ========== */
-@media (max-width: 900px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .image-grid {
+    .image-grid,
+    .recovery-grid,
+    .tracking-grid {
         grid-template-columns: 1fr;
     }
 }
-
-
-.progress-container {
-  width: 100%;
-  background: #e6f5ee;
-  border-radius: 10px;
-  height: 20px;
-  margin-top: 10px;
-}
-
-#progressBar {
-  height: 100%;
-  width: 0%;
-  background: #2a7f62;
-  border-radius: 10px;
-  transition: width .3s ease;
-}
-
-.toggle-btn {
-  background: #2a7f62;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-
-.toggle-btn:hover {
-  background: #256b54;
-}
-
-.encouragement {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #2a7f62;
-  margin-bottom: 1rem;
-}
-
-.collapsible ul {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height .4s ease, opacity .4s ease;
-}
-
-.collapsible.open ul {
-  max-height: 600px; /* enough space for your lists */
-  opacity: 1;
-}
-
-.icon-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.tracking-box {
-  background: #f7fdf9;
-  padding: 1rem;
-  border-radius: 12px;
-  border: 1px solid #d8efe3;
-  transition: all .3s ease;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.section-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #2a7f62;
-}
-
-.icon {
-  width: 60px;
-  height: auto;
-}
-
-.tracking-content {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height .4s ease, opacity .4s ease;
-}
-
-.collapsible.open .tracking-content {
-  max-height: 600px;
-  opacity: 1;
-}
-
-.tracking-content label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-.tracking-content textarea,
-.tracking-content select,
-.tracking-content input[type="date"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: .5rem;
-  border-radius: 8px;
-  border: 1px solid #c8e6d8;
-  background: white;
-}
-
-.recovery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.icon {
-  width: 900px;
-  height: auto;
-}
-
-.section-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
