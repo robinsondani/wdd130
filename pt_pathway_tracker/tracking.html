@@ -19,14 +19,98 @@
     </header>
 
   <main>
-    <h2>Tracking</h2>
-    <p>Content for this page goes here.</p>
-  </main>
+    <section class="hero">
+            <img src="images/Track_Progress_Icon .png" alt="Track Your Progress icon">
+            <p>Click an icon to open your tracking tools</p>
+    </section>
+
+  <div class="icon-grid">
+    <!-- DAILY LOG -->
+    <section class="tracking-box collapsible">
+      <div class="section-header">
+        <img src="images/Daily_Log_Icon.png" alt="Daily Log Icon" class="icon">
+        <h3>Daily Log</h3>
+      </div>
+      <div class="tracking-content">
+        <label>Date:</label>
+        <input type="date">
+        <label>Exercises completed:</label>
+        <textarea placeholder="List exercises, sets, reps..."></textarea>
+        <label>How did your body feel?</label>
+        <textarea placeholder="Soreness, tightness, improvements..."></textarea>
+      </div>
+    </section>
+
+    <!-- MOOD TRACKER -->
+    <section class="tracking-box collapsible">
+      <div class="section-header">
+        <img src="images/Mood_Tracker_Icon.png" alt="Mood Tracker Icon" class="icon">
+        <h3>Mood Tracker</h3>
+      </div>
+      <div class="tracking-content">
+        <label>How are you feeling today?</label>
+        <select>
+          <option>😊 Good</option>
+          <option>😐 Okay</option>
+          <option>😔 Low</option>
+          <option>😣 Stressed</option>
+          <option>🤩 Motivated</option>
+        </select>
+        <label>Notes:</label>
+        <textarea placeholder="Anything affecting your mood today?"></textarea>
+      </div>
+    </section>
+
+    <!-- PAIN LEVEL -->
+    <section class="tracking-box collapsible">
+      <div class="section-header">
+        <img src="images/Pain_Level_Icon.png" alt="Pain Level Icon" class="icon">
+        <h3>Pain Level</h3>
+      </div>
+      <div class="tracking-content">
+        <label>Pain Level (0–10):</label>
+        <input type="range" min="0" max="10" value="0" id="painSlider">
+        <p id="painValue">Pain Level: 0</p>
+      </div>
+    </section>
+
+    <!-- WEEKLY GOALS -->
+    <section class="tracking-box collapsible">
+      <div class="section-header">
+        <img src="images/Weekly_Goals_Icon.png" alt="Weekly Goals Icon" class="icon">
+        <h3>Weekly Goals</h3>
+      </div>
+      <div class="tracking-content">
+        <label>This week's goals:</label>
+        <textarea placeholder="Example: Walk 10 min daily, complete 3 sessions..."></textarea>
+      </div>
+    </section>
+  </div>
+</main>
 
   <footer>
         <p>© 2026 PT Pathway Tracker | Designed by Danielle Robinson</p>
         <p><a href="site-plan.html">Site Plan</a></p>
     </footer>
 
+    <script>
+  // Click-to-reveal sections
+  const sections = document.querySelectorAll('.collapsible');
+
+  sections.forEach(section => {
+    const header = section.querySelector('.section-header');
+    header.addEventListener('click', () => {
+      section.classList.toggle('open');
+    });
+  });
+
+  // Pain slider display
+  const painSlider = document.getElementById('painSlider');
+  const painValue = document.getElementById('painValue');
+
+  painSlider.addEventListener('input', () => {
+    painValue.textContent = "Pain Level: " + painSlider.value;
+  });
+</script>
 </body>
 </html>

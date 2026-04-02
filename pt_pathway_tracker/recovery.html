@@ -1,32 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Pathway Tracker | Home</title>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT Pathway Tracker – Recovery</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
-    <header>
+
+<header>
         <img class="logo" src="images/Logo_Icon.png" alt="PT Pathway Tracker logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="exercises.html">Exercises</a>
-            <a href="recovery.html">Recovery </a>
-            <a herf="tracking.html">Tracking</a>
+            <a href="recovery.html">Recovery</a>
+            <a href="tracking.html">Tracking</a>
         </nav>
     </header>
+<main>
+      <section class="hero">
+            <img src="images/Recovery_Icon.png" alt="Recovery icon">
+            <h1>Recovery Tools & Tips</h1>
+            <p>Track your healing and follow your recovery routine by clicking on an icon</p>
+    </section>
 
-  <main>
-    <h2>Recovery</h2>
-    <p>Content for this page goes here.</p>
-  </main>
+  <!-- DAILY ENCOURAGEMENT MESSAGE -->
+  <p id="dailyMessage" class="encouragement"></p>
 
-  <footer>
-        <p>© 2026 PT Pathway Tracker | Designed by Danielle Robinson</p>
-        <p><a href="site-plan.html">Site Plan</a></p>
-    </footer>
+  <div class="recovery-grid">
+
+
+  <!-- RECOVERY CHECKLIST -->
+  <section class="recovery-section collapsible">
+    <div class="section-header">
+      <img src="images/Recovery_checklist_icon.png" alt="Recovery Checklist Icon" class="icon">
+    </div>
+
+    <ul class="checklist">
+      <li><input type="checkbox" class="check-item"> Ice or heat therapy (20 minutes max)</li>
+      <li><input type="checkbox" class="check-item"> Gentle stretching (5–10 minutes)</li>
+      <li><input type="checkbox" class="check-item"> Hydration (8–10 cups of water)</li>
+      <li><input type="checkbox" class="check-item"> Sleep tracking (7–9 hours)</li>
+      <li><input type="checkbox" class="check-item"> Pain level notes (scale 1–10)</li>
+      <li><input type="checkbox" class="check-item"> Balanced meals</li>
+      <li><input type="checkbox" class="check-item"> Limit processed foods</li>
+      <li><input type="checkbox" class="check-item"> Mindful breathing</li>
+      <li><input type="checkbox" class="check-item"> Gratitude journal</li>
+      <li><input type="checkbox" class="check-item"> Connect with a support person</li>
+    </ul>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-container">
+      <div id="progressBar"></div>
+    </div>
+  </section>
+
+  <!-- GUIDED RECOVERY -->
+  <section class="recovery-section collapsible">
+    <div class="section-header">
+      <img src="images/Guided_Recovery_Icon.png" alt="Guided Recovery Icon" class="icon">
+    </div>
+
+    <ul>
+      <li>Breathing exercises (box breathing)</li>
+      <li>Mindful walking (focus on each step)</li>
+      <li>Gentle yoga (child’s pose, cat-cow)</li>
+      <li>Progressive muscle relaxation</li>
+      <li>Nature visualization (forest, stream)</li>
+      <li>Soothing music or soundscapes</li>
+      <li>Reflective journaling</li>
+      <li>Guided meditation</li>
+      <li>Aromatherapy or warm bath</li>
+      <li>Stretch + breathe with calming scent</li>
+    </ul>
+  </section>
+
+  <!-- TRACK YOUR PROGRESS -->
+  <section class="recovery-section collapsible">
+    <div class="section-header">
+      <img src="images/Track_Progress_Icon .png" alt="Track Your Progress Icon" class="icon">
+    </div>
+
+    <ul>
+      <li>Mobility improvements (range of motion)</li>
+      <li>Pain levels (daily notes)</li>
+      <li>Sleep quality (hours + restfulness)</li>
+      <li>Energy levels (morning vs evening)</li>
+      <li>Mood check-ins</li>
+      <li>Weekly goals</li>
+      <li>Exercise log</li>
+      <li>Recovery calendar</li>
+      <li>Balance + coordination notes</li>
+      <li>Weekly reflections</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 PT Pathway Tracker | Designed by Danielle Robinson</p>
+  <p><a href="site-plan.html">Site Plan</a></p>
+</footer>
+
+<!-- JAVASCRIPT FOR ALL FEATURES -->
+<script>
+  // -----------------------------
+  //  CHECKABLE CHECKLIST + SAVE PROGRESS
+  // -----------------------------
+  const checkboxes = document.querySelectorAll('.check-item');
+
+  checkboxes.forEach((box, index) => {
+    const saved = localStorage.getItem('check-' + index);
+    if (saved === 'true') box.checked = true;
+
+    box.addEventListener('change', () => {
+      localStorage.setItem('check-' + index, box.checked);
+      updateProgress();
+    });
+  });
+
+  // -----------------------------
+  // ROGRESS BAR
+  // -----------------------------
+  function updateProgress() {
+    const boxes = document.querySelectorAll('.check-item');
+    const checked = [...boxes].filter(b => b.checked).length;
+    const percent = (checked / boxes.length) * 100;
+    document.getElementById('progressBar').style.width = percent + '%';
+  }
+
+  updateProgress();
+
+  // -----------------------------
+  // DAILY ENCOURAGEMENT MESSAGE
+  // -----------------------------
+  const messages = [
+    "You're doing better than you think.",
+    "Small steps lead to big progress.",
+    "Healing takes time — and you're on your way.",
+    "Your consistency is your superpower.",
+    "Every day you show up matters.",
+    "Your body appreciates your effort today.",
+    "Progress is progress — no matter how small."
+  ];
+
+  const msg = document.getElementById('dailyMessage');
+  msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+
+// -----------------------------
+// COLLAPSIBLE SECTIONS (click icon/header to open)
+// -----------------------------
+const sections = document.querySelectorAll('.collapsible');
+
+sections.forEach(section => {
+  const header = section.querySelector('.section-header');
+
+  header.addEventListener('click', () => {
+    section.classList.toggle('open');
+  });
+});
+
+</script>
 
 </body>
 </html>
